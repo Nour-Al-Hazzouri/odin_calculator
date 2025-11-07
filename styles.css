@@ -3,17 +3,18 @@ body {
     padding: 0;
     box-sizing: content-box;
 }
+
 .calculator-container {
     display: flex;
     flex-direction: column;
     height: 60vh;
     width: 20vw;
-    background-color: #ADD8E6;
+    background-color: #6497B1;
     border: 1px solid #121212;
     border-radius: 20px;
     align-items: center;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 15vh;
     margin-bottom: 20px;
     padding: 10px;
 }
@@ -32,16 +33,17 @@ body {
     border-radius: 5px;
     padding: 10px;
     font-size: 1.2rem;
+    background-color: #F0E68C;
 }
 .numbers {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: baseline;
     align-items: center;
     height: 80%;
     width: 80%;
-    gap: 10px;
-    flex: 1;
+    gap: 30px;
+    margin-top: 3vh;
 }
 .numbers-btn {
     width: 50px;
@@ -55,7 +57,12 @@ body {
     width: 50px;
     height: 50px;
     background-color: blue;
+    color: azure;
     border: 1px solid black;
     border-radius: 5px;
-    font-size: larger;
+    font-size: 1.3rem;
+}
+.middle-keys, .upper-keys, .lower-keys, .lowest{
+    display: flex;
+    gap: 8px;
 }
