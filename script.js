@@ -1,8 +1,8 @@
 const input= document.querySelector('input');
 // Input accepts only characters defined in the array
 input.addEventListener('keydown', e => {
-    const allowedChars = ['+', '-', '/', '*', '.', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 
-        'Backspace', 'ArrowLeft', 'ArrowRight']; // Define characters to prevent
+    const allowedChars = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Backspace', 'ArrowLeft', 'ArrowRight']; 
+    // Define characters to prevent
     if (!allowedChars.includes(e.key)) {
         e.preventDefault(); // Prevent the character from being typed
     }
@@ -15,7 +15,7 @@ let number2= 0;
 
 // Clear function by setting everything to NULL
 const clear= document.querySelector(".clear");
-clear.addEventListener("click", e => {
+clear.addEventListener("click", () => {
     window.location.reload()
 })
 
@@ -61,7 +61,8 @@ numbers.forEach(number => {
         content= e.target;
         text= content.textContent;
         if (text === '=') {
-            alert(text)
+            if (!number1 || !number2 || !operator)
+                alert("Make sure you selected 2 numbers and 1 operator")
         } else if (text === '.') {
             input.value += text;
             number.disabled= true;
