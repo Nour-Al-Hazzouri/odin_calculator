@@ -8,18 +8,17 @@ input.addEventListener('keydown', e => {
     }
 })
 
-const clear= document.querySelector(".clear");
-clear.addEventListener("click", e => {
-    number1= 0;
-    number2= 0;
-    input.value= '';
-    operator= '';
-})
-
 // The 3 main variables to contain the numbers operator
 let number1= 0;
 let operator;
 let number2= 0;
+
+// Clear function by setting everything to NULL
+const clear= document.querySelector(".clear");
+clear.addEventListener("click", e => {
+    window.location.reload()
+})
+
 
 // The 4 main operations
 const add= (number1, number2) => {
@@ -50,4 +49,25 @@ const operate= (number1, operator, number2) => {
         return divide(number1, number2);
     }
 };
+
+// Query all relevant buttons
+const numbers= document.querySelectorAll(".numbers-btn")
+
+// Logic to add numbers according to the requirements (floating number or not)
+numbers.forEach(number => {
+    let content;
+    let text;
+    number.addEventListener("click", e => {
+        content= e.target;
+        text= content.textContent;
+        if (text === '=') {
+            alert(text)
+        } else if (text === '.') {
+            input.value += text;
+            number.disabled= true;
+        } else {
+            input.value += text;
+        }
+    });
+});
 
