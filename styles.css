@@ -2,4 +2,69 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: content-box;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.calculator-container {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 20vw;
+    background-color: #6497B1;
+    border: 1px solid #121212;
+    border-radius: 20px;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 15vh;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    height: 10%;
+    padding: 10px;
+}
+.display > input {
+    width: 80%;
+    height: 70%;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #F0E68C;
+}
+.numbers {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    height: 80%;
+    width: 80%;
+    gap: 7vh;
+    margin-top: 3vh;
+}
+.numbers-btn {
+    width: 4vw;
+    height: 5vh;
+    background-color: azure;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+.operators-btn {
+    width: 4vw;
+    height: 5vh;
+    background-color: #0000FF;
+    color: azure;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.3rem;
+}
+.middle-keys, .upper-keys, .lower-keys, .lowest{
+    display: flex;
+    gap: 1vw;
 }
