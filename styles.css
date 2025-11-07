@@ -2,6 +2,9 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: content-box;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .calculator-container {
@@ -37,26 +40,25 @@ body {
 }
 .numbers {
     display: flex;
-    flex-direction: column;
-    justify-content: baseline;
+    flex-direction: column; 
     align-items: center;
     height: 80%;
     width: 80%;
-    gap: 30px;
+    gap: 7vh;
     margin-top: 3vh;
 }
 .numbers-btn {
-    width: 50px;
-    height: 50px;
+    width: 4vw;
+    height: 5vh;
     background-color: azure;
     border: 1px solid black;
     border-radius: 5px;
-    font-size: larger;
+    font-size: 1.2rem;
 }
 .operators-btn {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
+    width: 4vw;
+    height: 5vh;
+    background-color: #0000FF;
     color: azure;
     border: 1px solid black;
     border-radius: 5px;
@@ -64,5 +66,5 @@ body {
 }
 .middle-keys, .upper-keys, .lower-keys, .lowest{
     display: flex;
-    gap: 8px;
+    gap: 1vw;
 }
