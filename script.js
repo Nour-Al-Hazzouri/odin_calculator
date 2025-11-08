@@ -45,6 +45,9 @@ numbers.forEach((number) => {
   number.addEventListener("click", (e) => {
     content = e.target;
     text = content.textContent;
+    if (input.value.includes("ERROR")) {
+      input.value= '';
+    }
     if (text === ".") {
       input.value += text;
       number.disabled = true;
@@ -58,34 +61,62 @@ numbers.forEach((number) => {
 const add = (number1, number2) => {
   if (input.value.includes(".")) {
     result = parseFloat(number1) + parseFloat(number2);
-    input.value = result.toFixed(1);
+    if (Number.isNaN(result)) {
+      input.value = "ERROR";
+    } else {
+      input.value = result.toFixed(1);
+    }
   } else {
     result = parseInt(number1) + parseInt(number2);
-    input.value = result;
+    if (Number.isNaN(result)) {
+      input.value = "ERROR";
+    } else {
+      input.value = result;
+    }
   }
 };
 const subtract = (number1, number2) => {
   if (input.value.includes(".")) {
     result = parseFloat(number1) - parseFloat(number2);
-    input.value = result.toFixed(1);
+    if (Number.isNaN(result)) {
+      input.value = "ERROR";
+    } else {
+      input.value = result.toFixed(1);
+    }
   } else {
     result = parseInt(number1) - parseInt(number2);
-    input.value = result;
+    if (Number.isNaN(result)) {
+      input.value = "ERROR";
+    } else {
+      input.value = result;
+    }
   }
 };
 const multiply = (number1, number2) => {
   if (input.value.includes(".")) {
     result = parseFloat(number1) * parseFloat(number2);
-    input.value = result.toFixed(1);
+    if (Number.isNaN(result)) {
+      input.value = "ERROR";
+    } else {
+      input.value = result.toFixed(1);
+    }
   } else {
     result = parseInt(number1) * parseInt(number2);
-    input.value = result;
+    if (Number.isNaN(result)) {
+      input.value = "ERROR";
+    } else {
+      input.value = result;
+    }
   }
 };
 const divide = (number1, number2) => {
-  result = parseInt(number1) / parseInt(number2);
+  result = parseFloat(number1) / parseFloat(number2);
   let rounded = result.toFixed(1);
-  input.value = parseFloat(rounded);
+  if (rounded === "NaN") {
+    input.value= "ERROR";
+  } else {
+    input.value = rounded;
+  }
 };
 
 // Main operate function
@@ -99,13 +130,17 @@ const operate = (number1, operator, number2) => {
 // Separates the expression into parts used by the operate function
 const separator = (operator) => {
   if (!input.value.includes(operator)) {
-    if (input.value.includes('-') || input.value.includes('+') || input.value.includes('×') || input.value.includes('÷')) {
-      alert("Can't use multiple operators in 1 calculation")
+    if (
+      input.value.includes("-") ||
+      input.value.includes("+") ||
+      input.value.includes("×") ||
+      input.value.includes("÷")
+    ) {
+      alert("Can't use multiple operators in 1 calculation");
     } else {
       number1 = input.value;
       input.value += operator;
     }
-
   } else {
     let expression = input.value.split(operator);
     number2 = expression[1];
@@ -117,6 +152,9 @@ const separator = (operator) => {
 operators.forEach((operator) => {
   operator.addEventListener("click", (e) => {
     content = e.target.textContent;
+    if (input.value.includes("ERROR")) {
+      input.value= '';
+    }
     // Start with actual calculation
     if (content === "+") {
       separator(content);
