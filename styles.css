@@ -1,3 +1,12 @@
+/*
+Code taken from Google for specific functionalities
+---
+*/
+
+/*
+---
+Own Code
+*/
 body {
     margin: 0;
     padding: 0;
@@ -24,19 +33,21 @@ body {
 .display {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 90%;
     height: 10%;
     padding: 10px;
+    gap: 10px;
 }
 .display > input {
-    width: 80%;
-    height: 70%;
+    width: 90%;
+    height: 80%;
     border-radius: 5px;
     padding: 10px;
     font-size: 1.2rem;
     background-color: #F0E68C;
+    flex: 1;
 }
 .numbers {
     display: flex;
@@ -67,4 +78,18 @@ body {
 .middle-keys, .upper-keys, .lower-keys, .lowest{
     display: flex;
     gap: 1vw;
+}
+
+.clear {
+    width: 5vw;
+    height: 6vh;
+    font-size: .8rem;
+    background-color: red ;
+    color: #FFFFFF;
+    border-radius: 5px;
+    flex: 0;
+}
+.numbers-btn.operators-btn {
+    background-color: azure;
+    color: black;
 }
