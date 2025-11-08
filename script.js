@@ -96,11 +96,17 @@ const operate = (number1, operator, number2) => {
   else if (operator === "÷") return divide(number1, number2);
 };
 
+// Separates the expression into parts used by the operate function
 const separator = (operator) => {
   if (!input.value.includes(operator)) {
-    number1 = input.value;
-    input.value += operator;
-  } else if (input.value.includes(operator)) {
+    if (input.value.includes('-') || input.value.includes('+') || input.value.includes('×') || input.value.includes('÷')) {
+      alert("Can't use multiple operators in 1 calculation")
+    } else {
+      number1 = input.value;
+      input.value += operator;
+    }
+
+  } else {
     let expression = input.value.split(operator);
     number2 = expression[1];
     operate(number1, operator, number2);
@@ -113,7 +119,6 @@ operators.forEach((operator) => {
     content = e.target.textContent;
     // Start with actual calculation
     if (content === "+") {
-      if (input)
       separator(content);
     } else if (content === "-") {
       separator(content);
