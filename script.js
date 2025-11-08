@@ -1,3 +1,4 @@
+// Query input element to modify and get numbers
 const input = document.querySelector("input");
 // Input accepts only characters defined in the array
 input.addEventListener("keydown", (e) => {
@@ -48,7 +49,7 @@ const divide = (number1, number2) => {
   return number1 / number2;
 };
 
-// The main function to accept 2 numbers and 1 operator to do the math for the calculator
+// The main function to accept 2 numbers and 1 operator to do the math for the calculator.
 const operate = (number1, operator, number2) => {
   if (operator === "+") {
     return add(number1, number2);
