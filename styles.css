@@ -89,3 +89,7 @@ body {
     border-radius: 5px;
     flex: 0;
 }
+.numbers-btn.operators-btn {
+    background-color: azure;
+    color: black;
+}
